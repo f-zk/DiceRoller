@@ -17,7 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/empty_dice"
-        tools:src="@drawable/dice_1"/>
+        tools:src="@drawable/dice_1"
+        android:contentDescription="TODO" />
 
     <Button
         android:id="@+id/roll_button"
