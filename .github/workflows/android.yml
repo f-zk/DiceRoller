@@ -17,7 +17,25 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    
+    - name: Cache Dependencies
+      uses: actions/cache@v1
+      with:
+            path: ~/.gradle/caches
+            key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+            restore-keys: |
+                ${{ runner.os }}-gradle- 
+    
     - name: Build with Gradle
       run: |
-            chmod +x ./gradlew
-            ./gradlew build
+          chmod +x gradlew
+          ./gradlew build
+      
+    - name: Run Unit Tests
+      run: ./gradlew test
+ 
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+          name: DiceRoller
+          path: ~\app\build\outputs\apk\debug
