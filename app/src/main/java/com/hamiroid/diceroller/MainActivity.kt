@@ -22,9 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        val randomInt = (1..6).random()
-
-        val drawableResource = when(randomInt) {
+        val drawableResource = when((1..6).random()) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             2 -> R.drawable.dice_3
