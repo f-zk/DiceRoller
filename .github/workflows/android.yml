@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
           name: DiceRoller
-          path: ~/app/build/outputs/apk/debug
+          path: app/build/outputs/apk/debug
